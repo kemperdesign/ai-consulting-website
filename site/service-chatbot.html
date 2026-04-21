@@ -1,23 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact — Kemper Design Services</title>
+  <title>AI Chatbots & Assistants — Kemper Design Services</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .service-hero {
+      background: var(--heading-color);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 100vh;
+      overflow: hidden;
+      padding: 88px 0 0;
+      position: relative;
+    }
+    .service-hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 120px 80px;
+      color: #fff;
+      position: relative;
+      z-index: 2;
+    }
+    .service-hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--accent-green);
+      margin-bottom: 24px;
+    }
+    .service-hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 32px;
+      height: 2px;
+      background: var(--accent-green);
+      flex-shrink: 0;
+    }
+    .service-hero-title {
+      font-size: clamp(36px, 5vw, 60px);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -.02em;
+      margin-bottom: 28px;
+    }
+    .service-hero-title em {
+      font-style: normal;
+      color: var(--accent-green);
+    }
+    .service-hero-sub {
+      font-size: 18px;
+      line-height: 1.65;
+      color: rgba(255,255,255,.7);
+      max-width: 460px;
+      margin-bottom: 40px;
+    }
+    .service-hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+    .service-hero-right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(.75) saturate(.9);
+    }
+    .service-hero-right::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, #000 0%, transparent 30%);
+      z-index: 1;
+      pointer-events: none;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: nowrap;
+      width: fit-content;
+      margin-top: 20px;
+    }
+    .hero-actions a {
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .related-services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 60px;
+    }
+    .related-card {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: all .3s ease;
+    }
+    .related-card:hover {
+      border-color: var(--accent-green);
+      box-shadow: 0 12px 40px rgba(0,0,0,.08);
+      transform: translateY(-4px);
+    }
+    .related-card h3 {
+      margin: 0;
+      font-size: 18px;
+      color: var(--heading-color);
+    }
+    .related-card p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--text-color);
+    }
+    .related-card a {
+      color: var(--accent-green);
+      font-weight: 600;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: auto;
+    }
+    .solution-inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 60px;
+    }
+    .solution-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      margin-top: 32px;
+    }
+    .solution-list li {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+    }
+    .check {
+      color: var(--accent-green);
+      font-weight: bold;
+      font-size: 20px;
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+    .solution-list h3 {
+      margin: 0 0 12px 0;
+      color: var(--heading-color);
+    }
+    .solution-list p {
+      margin: 0;
+      color: var(--text-color);
+      line-height: 1.65;
+    }
+    .cta-section {
+      background: var(--heading-color);
+      padding: 100px 0;
+      text-align: center;
+    }
+    .cta-section h2 {
+      color: #fff;
+      margin-bottom: 16px;
+    }
+    .cta-section p {
+      color: rgba(255,255,255,.7);
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+    @media (max-width: 768px) {
+      .service-hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+      .service-hero-left {
+        padding: 80px 30px;
+      }
+      .service-hero-right {
+        min-height: 400px;
+      }
+      .related-services {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
   <!-- Offcanvas overlay -->
   <div class="offcanvas-overlay" id="offcanvas-overlay" onclick="closeMobileNav()"></div>
+
+  <!-- Mobile Nav -->
   <div class="mobile-nav" id="mobile-nav">
     <button class="mobile-close" onclick="closeMobileNav()" aria-label="Close menu">✕</button>
     <ul style="display:flex;flex-direction:column;gap:4px;margin-top:20px;">
       <li><a href="index.html" style="display:block;padding:10px 0;font-family:var(--heading-font);font-weight:500;color:var(--heading-color);">Home</a></li>
-      <li><a href="about.html" style="display:block;padding:10px 0;font-family:var(--heading-font);font-weight:500;color:var(--heading-color);">About</a></li>
       <li><a href="services.html" style="display:block;padding:10px 0;font-family:var(--heading-font);font-weight:500;color:var(--heading-color);">Services</a></li>
+      <li><a href="about.html" style="display:block;padding:10px 0;font-family:var(--heading-font);font-weight:500;color:var(--heading-color);">About</a></li>
       <li><a href="products.html" style="display:block;padding:10px 0;font-family:var(--heading-font);font-weight:500;color:var(--heading-color);">Products</a></li>
       <li><a href="consulting.html" style="display:block;padding:10px 0;font-family:var(--heading-font);font-weight:500;color:var(--heading-color);">Consulting</a></li>
       <li><a href="faq.html" style="display:block;padding:10px 0;font-family:var(--heading-font);font-weight:500;color:var(--heading-color);">FAQ</a></li>
@@ -93,13 +282,15 @@
         <li class="nav-item"><a href="consulting.html">Consulting</a></li>
         <li class="nav-item"><a href="faq.html">FAQ</a></li>
         <li class="nav-item"><a href="blog.html">Blog</a></li>
-        <li class="nav-item"><a href="contact.html" aria-current="page">Contact</a></li>
+        <li class="nav-item"><a href="contact.html">Contact</a></li>
       </ul>
       <div class="nav-cta-wrapper">
-        <button class="nav-search-btn" aria-label="Search">
+        <!-- Search button -->
+        <button class="nav-search-btn" aria-label="Search" onclick="this.closest('nav').querySelector('.nav-search-input').focus()">
           <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         </button>
-        <a href="discovery.html" class="btn btn-primary nav-cta">Get a Quote <span class="btn-arrow">→</span></a>
+        <a href="discovery.html" class="btn btn-primary nav-cta">Book a Call <span class="btn-arrow">→</span></a>
+        <!-- Hamburger (mobile) -->
         <button class="hamburger" id="hamburger" aria-label="Open menu" onclick="openMobileNav()">
           <span></span><span></span><span></span>
         </button>
@@ -107,238 +298,97 @@
     </div>
   </nav>
 
-  <!-- ── Page Hero ── -->
-  <section class="page-hero">
-    <div class="page-hero-content fade-up">
-      <span class="eyebrow" style="color:rgba(255,255,255,.55);">Get in Touch</span>
-      <h1 class="h1">Let's find out if we're a good fit.</h1>
-      <p class="lead">30 minutes, no pitch, no deck. You describe your business and what's frustrating about running it.
-        We'll tell you honestly what we can do — and what we can't.</p>
+  <!-- ── Hero ── -->
+  <section class="service-hero">
+    <div class="service-hero-left">
+      <div class="service-hero-eyebrow">Technical Solutions</div>
+      <h1 class="service-hero-title">
+        Assistants that <em>respond</em><br>
+        to your customers.
+      </h1>
+      <p class="service-hero-sub">
+        Custom chatbots and AI assistants that handle inquiries, qualify leads, and escalate to your team when needed.
+      </p>
+      <div class="hero-actions">
+        <a href="discovery.html" class="btn btn-primary">Start a Project</a>
+        <a href="#details" class="btn btn-outline" style="border-color:rgba(255,255,255,.3);color:#fff;">Learn More</a>
+      </div>
+    </div>
+    <div class="service-hero-right">
+      <img
+        src="https://images.unsplash.com/photo-1531746790731-6c087fecd65b?auto=format&fit=crop&q=80&w=900"
+        alt="AI chatbots"
+      />
     </div>
   </section>
 
-  <!-- ── Contact + Form ── -->
-  <section class="section">
+  <!-- ── Service Details ── -->
+  <section id="details" class="section">
     <div class="container">
-      <div class="contact-grid">
-
-        <!-- Info column -->
-        <div class="contact-info">
-
-          <div>
-            <span class="eyebrow">How to Reach Us</span>
-            <h2 class="h2" style="font-size:clamp(1.5rem,3vw,2.1rem);">We reply within one business day. Always.</h2>
-            <p class="lead" style="margin-top:16px;">Use the form to tell us about your business, or book a call
-              directly below. Either way, you'll hear back quickly — from a real person who's read what you wrote.</p>
-          </div>
-
-          <div class="contact-info-item">
-            <div class="contact-info-icon">📧</div>
-            <div class="contact-info-text">
-              <strong>Email</strong>
-              <span>hello@kemperdesignservices.com</span>
-            </div>
-          </div>
-
-          <div class="contact-info-item">
-            <div class="contact-info-icon">📞</div>
-            <div class="contact-info-text">
-              <strong>Phone</strong>
-              <span>+1 (555) 012-3456 · Monday–Friday, 9am–5pm</span>
-            </div>
-          </div>
-
-          <div class="contact-info-item">
-            <div class="contact-info-icon">⏱️</div>
-            <div class="contact-info-text">
-              <strong>Response time</strong>
-              <span>We reply to every enquiry within one business day — no exceptions.</span>
-            </div>
-          </div>
-
-          <!-- Availability -->
-          <div
-            style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;">
-            <span class="eyebrow" style="font-size:10.5px;margin-bottom:12px;">Current Availability</span>
-            <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
-              <div
-                style="width:8px;height:8px;background:#10b981;border-radius:50%;flex-shrink:0;box-shadow:0 0 0 3px rgba(16,185,129,.18);">
+      <div class="solution-inner">
+        <div>
+          <p class="lead">Deploy intelligent chatbots that understand your customers' needs, answer their questions, and collect valuable information. Our assistants learn from every conversation.</p>
+          <ul class="solution-list">
+            <li>
+              <span class="check">✓</span>
+              <div>
+                <h3 class="h3">24/7 customer availability</h3>
+                <p>Your bot never closes. Handle inquiries during off-hours, weekends, and holidays without hiring additional staff.</p>
               </div>
-              <span style="font-size:14px;font-weight:600;color:var(--ink);">Accepting new clients — Q2 2026</span>
-            </div>
-            <p style="font-size:13.5px;color:var(--mid);line-height:1.6;">We keep our client list intentionally small so
-              every project gets proper attention. Spots for Q2 are limited — if you're considering it, sooner is
-              better.</p>
-          </div>
-
-          <!-- Calendar placeholder -->
-          <div>
-            <span class="eyebrow" style="font-size:10.5px;margin-bottom:12px;">Book a Call Directly</span>
-            <div
-              style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;">
-              <div style="padding:18px 24px;border-bottom:1px solid var(--border);">
-                <div style="font-size:14px;font-weight:700;color:var(--ink);">The Kemper Design Services Discovery Session: What to Expect in 30 Minutes</div>
-                <div style="font-size:13px;color:var(--mid);margin-top:3px;">Video or phone — whatever works for you
-                </div>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              <div>
+                <h3 class="h3">Natural conversations</h3>
+                <p>Powered by advanced AI, your assistant sounds human and handles complex questions with context and nuance.</p>
               </div>
-              <!-- Replace this placeholder with your Calendly or Cal.com embed -->
-              <div style="padding:28px 24px;text-align:center;">
-                <div style="font-size:32px;margin-bottom:10px;">📅</div>
-                <div style="font-size:14px;font-weight:600;color:var(--ink);margin-bottom:6px;">Calendar booking coming
-                  soon</div>
-                <p style="font-size:13px;color:var(--mid);line-height:1.6;margin-bottom:20px;">Drop in your Calendly or
-                  Cal.com widget here. In the meantime, use the form or email us directly.</p>
-                <a href="mailto:hello@kemperdesignservices.com?subject=Discovery Call Request" class="btn btn-primary"
-                  style="width:100%;justify-content:center;">
-                  Email to Book a Time
-                </a>
+            </li>
+            <li>
+              <span class="check">✓</span>
+              <div>
+                <h3 class="h3">Seamless handoff</h3>
+                <p>When issues need human touch, the bot escalates with full context. Your team picks up conversations mid-stream.</p>
               </div>
-            </div>
+            </li>
+          </ul>
+          <div style="margin-top:32px;">
+            <a href="discovery.html" class="btn btn-primary">Explore Chatbot Solutions</a>
           </div>
-
         </div>
-
-        <!-- Form column -->
-        <div class="contact-form-wrap">
-          <div style="background:rgba(74,103,245,.1);border:1px solid rgba(74,103,245,.2);border-radius:var(--radius);padding:24px;margin-bottom:32px;">
-            <h4 style="font-size:16px;font-weight:700;color:var(--ink);margin-bottom:8px;">Planning a complex project?</h4>
-            <p style="font-size:14px;color:var(--mid);margin-bottom:16px;">Our <strong>Discovery Session</strong> is the fastest way to get a specific proposal. It takes 2 minutes and helps us map your tech stack before we call.</p>
-            <a href="discovery.html" class="btn btn-primary" style="width:100%;justify-content:center;">Start Your Discovery Form →</a>
-          </div>
-
-          <h3 class="h3" style="margin-bottom:6px;">Or, send a general enquiry</h3>
-          <p style="font-size:14px;color:var(--mid);margin-bottom:32px;">For quick questions or support, use the form below. Takes about two minutes to fill in.</p>
-
-          <form action="https://formspree.io/f/mvzvowpa" method="POST">
-
-            <div class="form-row">
-              <div class="form-group">
-                <label class="form-label" for="first-name">First name <span
-                    style="color:var(--accent);">*</span></label>
-                <input class="form-input" type="text" id="first-name" name="first_name" placeholder="Jane" required>
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="last-name">Last name <span style="color:var(--accent);">*</span></label>
-                <input class="form-input" type="text" id="last-name" name="last_name" placeholder="Smith" required>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="email">Email address <span style="color:var(--accent);">*</span></label>
-              <input class="form-input" type="email" id="email" name="email" placeholder="jane@yourbusiness.com"
-                required>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group">
-                <label class="form-label" for="business">Business name</label>
-                <input class="form-input" type="text" id="business" name="business" placeholder="Your Business Ltd">
-              </div>
-              <div class="form-group">
-                <label class="form-label" for="phone">Phone (optional)</label>
-                <input class="form-input" type="tel" id="phone" name="phone" placeholder="+1 555 000 0000">
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="service">Which area interests you most?</label>
-              <select class="form-input" id="service" name="service">
-                <option value="" disabled selected>Select a service…</option>
-                <option value="strategy">AI Strategy Consulting — help me figure out where to start</option>
-                <option value="automation">Workflow Automation — stop the repetitive manual work</option>
-                <option value="chatbot">Chatbot & AI Assistant — handle enquiries without me</option>
-                <option value="integration">System Integrations — get my tools talking to each other</option>
-                <option value="custom">Custom Internal Tools — build something bespoke for my team</option>
-                <option value="scheduling">AI Auto Scheduling Attendant — automate my bookings</option>
-                <option value="training">Custom Training & SOPs — document my processes properly</option>
-                <option value="local-ai">Private AI Installation — keep my data off the cloud</option>
-                <option value="unsure">Not sure — I just know something needs to change</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="employees">How many people work in your business?</label>
-              <select class="form-input" id="employees" name="employees">
-                <option value="" disabled selected>Select team size…</option>
-                <option value="solo">Just me</option>
-                <option value="2-5">2–5 people</option>
-                <option value="6-20">6–20 people</option>
-                <option value="21-50">21–50 people</option>
-                <option value="50+">50+ people</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="message">What's eating your time right now? <span
-                  style="color:var(--accent);">*</span></label>
-              <textarea class="form-textarea" id="message" name="message"
-                placeholder="Describe the tasks or processes that frustrate you most — the things that feel like they should be easier, or that keep falling through the cracks. Any detail about your current tools or setup is useful too."
-                required></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary"
-              style="width:100%;justify-content:center;padding:16px;font-size:15px;">
-              Send Message →
-            </button>
-
-            <p style="font-size:12.5px;color:var(--muted);text-align:center;margin-top:16px;line-height:1.6;">We'll
-              reply within one business day. Your information stays private — no spam, ever.</p>
-          </form>
-        </div>
-
-        <input type="hidden" name="_subject" value="New AI Consultation Request">
-        <input type="hidden" name="_redirect" value="https://kemperdesignservices.com/thank-you.html">
-
       </div>
     </div>
   </section>
 
-  <!-- ── FAQ ── -->
-  <section class="section section--alt">
+  <!-- ── Related Services ── -->
+  <section class="section" style="background: var(--gray-bg);">
     <div class="container">
-      <div class="section-header">
-        <span class="eyebrow">Good Questions, Straight Answers</span>
-        <h2 class="h2">Things most people want to know before reaching out.</h2>
-        <p class="lead">We'd rather answer these upfront than have you spend the first half of a call asking them.</p>
+      <h2 class="h2" style="margin-bottom: 60px;">Related Services</h2>
+      <div class="related-services">
+        <a href="service-automation.html" class="related-card" style="text-decoration: none; color: inherit;">
+          <h3>AI Workflow Automation</h3>
+          <p>Automate repetitive tasks and connect your tools so data flows without manual entry.</p>
+          <span style="color: var(--accent-green); font-weight: 600;">Explore →</span>
+        </a>
+        <a href="service-integrations.html" class="related-card" style="text-decoration: none; color: inherit;">
+          <h3>System Integrations</h3>
+          <p>Connect your existing tools and platforms so they work together seamlessly.</p>
+          <span style="color: var(--accent-green); font-weight: 600;">Explore →</span>
+        </a>
+        <a href="service-custom-ai.html" class="related-card" style="text-decoration: none; color: inherit;">
+          <h3>Custom Internal AI Tools</h3>
+          <p>Purpose-built AI tools designed specifically for your team's workflow and expertise.</p>
+          <span style="color: var(--accent-green); font-weight: 600;">Explore →</span>
+        </a>
       </div>
-      <div class="problem-grid" style="margin-top:64px;">
-        <div class="problem-card">
-          <div class="problem-icon">🎯</div>
-          <h3 class="h3">Do I need to be technical?</h3>
-          <p>No. We handle everything on the technical side. Our job is to make sure you understand what we're building
-            and why — in plain language, not jargon. If something doesn't make sense, ask.</p>
-        </div>
-        <div class="problem-card">
-          <div class="problem-icon">💰</div>
-          <h3 class="h3">How much does it cost?</h3>
-          <p>Every project is different, so we won't give you a number before we understand what you need. After the
-            discovery call, you'll receive a written proposal with a fixed price before any work starts.</p>
-        </div>
-        <div class="problem-card">
-          <div class="problem-icon">⏱️</div>
-          <h3 class="h3">How quickly will I see results?</h3>
-          <p>Most projects go live within 2–6 weeks. 90% of clients report a measurable ROI within 60 days. We track
-            this with you — and tell you when something isn't performing as expected.</p>
-        </div>
-        <div class="problem-card">
-          <div class="problem-icon">🔒</div>
-          <h3 class="h3">What happens to my business data?</h3>
-          <p>Nothing leaves your hands without your knowledge. We never store, sell, or train on your data. Privacy is a
-            hard requirement on every project — not an optional extra.</p>
-        </div>
-        <div class="problem-card">
-          <div class="problem-icon">🔄</div>
-          <h3 class="h3">What if something doesn't work?</h3>
-          <p>If any tool we build underperforms in the first 30 days after launch, we fix it at no extra cost. That's
-            not a special guarantee — it's just how we operate.</p>
-        </div>
-        <div class="problem-card">
-          <div class="problem-icon">📞</div>
-          <h3 class="h3">What does support look like after launch?</h3>
-          <p>You'll have a named contact, a monthly check-in call, and direct access to us for questions. We don't
-            disappear after launch — a growing business always has new things to work on.</p>
-        </div>
-      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to deploy intelligent assistants?</h2>
+      <p>Let's build a chatbot that actually helps your business.</p>
+      <a href="discovery.html" class="btn btn-primary">Book a Call</a>
     </div>
   </section>
 

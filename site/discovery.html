@@ -4,14 +4,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact — Kemper Design Services</title>
+  <title>Discovery Session — Kemper Design Services</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    .discovery-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 64px 24px;
+    }
+    .form-section {
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+    .form-section:last-child { border-bottom: none; }
+    .checkbox-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .checkbox-item:hover { border-color: var(--accent); background: var(--white); }
+    .checkbox-item input { width: 18px; height: 18px; accent-color: var(--accent); cursor: pointer; }
+  </style>
 </head>
 
 <body>
 
   <!-- Offcanvas overlay -->
   <div class="offcanvas-overlay" id="offcanvas-overlay" onclick="closeMobileNav()"></div>
+
+  <!-- Mobile Nav -->
   <div class="mobile-nav" id="mobile-nav">
     <button class="mobile-close" onclick="closeMobileNav()" aria-label="Close menu">✕</button>
     <ul style="display:flex;flex-direction:column;gap:4px;margin-top:20px;">
@@ -93,13 +129,15 @@
         <li class="nav-item"><a href="consulting.html">Consulting</a></li>
         <li class="nav-item"><a href="faq.html">FAQ</a></li>
         <li class="nav-item"><a href="blog.html">Blog</a></li>
-        <li class="nav-item"><a href="contact.html" aria-current="page">Contact</a></li>
+        <li class="nav-item"><a href="contact.html">Contact</a></li>
       </ul>
       <div class="nav-cta-wrapper">
-        <button class="nav-search-btn" aria-label="Search">
+        <!-- Search button -->
+        <button class="nav-search-btn" aria-label="Search" onclick="this.closest('nav').querySelector('.nav-search-input').focus()">
           <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         </button>
-        <a href="discovery.html" class="btn btn-primary nav-cta">Get a Quote <span class="btn-arrow">→</span></a>
+        <a href="contact.html" class="btn btn-primary nav-cta">Contact Us <span class="btn-arrow">→</span></a>
+        <!-- Hamburger (mobile) -->
         <button class="hamburger" id="hamburger" aria-label="Open menu" onclick="openMobileNav()">
           <span></span><span></span><span></span>
         </button>
@@ -109,235 +147,143 @@
 
   <!-- ── Page Hero ── -->
   <section class="page-hero">
-    <div class="page-hero-content fade-up">
-      <span class="eyebrow" style="color:rgba(255,255,255,.55);">Get in Touch</span>
-      <h1 class="h1">Let's find out if we're a good fit.</h1>
-      <p class="lead">30 minutes, no pitch, no deck. You describe your business and what's frustrating about running it.
-        We'll tell you honestly what we can do — and what we can't.</p>
+    <div class="page-hero-content fade-up" style="max-width: 800px;">
+      <span class="eyebrow" style="color:rgba(255,255,255,.55);">Mapping Your Operation</span>
+      <h1 class="h1">Consultation Discovery</h1>
+      <p class="lead">The more context you provide below, the more specific and valuable our first conversation will be. This form helps us understand your operation before we even get on the call.</p>
     </div>
   </section>
 
-  <!-- ── Contact + Form ── -->
+  <!-- ── Discovery Form ── -->
   <section class="section">
     <div class="container">
-      <div class="contact-grid">
-
-        <!-- Info column -->
-        <div class="contact-info">
-
-          <div>
-            <span class="eyebrow">How to Reach Us</span>
-            <h2 class="h2" style="font-size:clamp(1.5rem,3vw,2.1rem);">We reply within one business day. Always.</h2>
-            <p class="lead" style="margin-top:16px;">Use the form to tell us about your business, or book a call
-              directly below. Either way, you'll hear back quickly — from a real person who's read what you wrote.</p>
-          </div>
-
-          <div class="contact-info-item">
-            <div class="contact-info-icon">📧</div>
-            <div class="contact-info-text">
-              <strong>Email</strong>
-              <span>hello@kemperdesignservices.com</span>
-            </div>
-          </div>
-
-          <div class="contact-info-item">
-            <div class="contact-info-icon">📞</div>
-            <div class="contact-info-text">
-              <strong>Phone</strong>
-              <span>+1 (555) 012-3456 · Monday–Friday, 9am–5pm</span>
-            </div>
-          </div>
-
-          <div class="contact-info-item">
-            <div class="contact-info-icon">⏱️</div>
-            <div class="contact-info-text">
-              <strong>Response time</strong>
-              <span>We reply to every enquiry within one business day — no exceptions.</span>
-            </div>
-          </div>
-
-          <!-- Availability -->
-          <div
-            style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;">
-            <span class="eyebrow" style="font-size:10.5px;margin-bottom:12px;">Current Availability</span>
-            <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
-              <div
-                style="width:8px;height:8px;background:#10b981;border-radius:50%;flex-shrink:0;box-shadow:0 0 0 3px rgba(16,185,129,.18);">
-              </div>
-              <span style="font-size:14px;font-weight:600;color:var(--ink);">Accepting new clients — Q2 2026</span>
-            </div>
-            <p style="font-size:13.5px;color:var(--mid);line-height:1.6;">We keep our client list intentionally small so
-              every project gets proper attention. Spots for Q2 are limited — if you're considering it, sooner is
-              better.</p>
-          </div>
-
-          <!-- Calendar placeholder -->
-          <div>
-            <span class="eyebrow" style="font-size:10.5px;margin-bottom:12px;">Book a Call Directly</span>
-            <div
-              style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;">
-              <div style="padding:18px 24px;border-bottom:1px solid var(--border);">
-                <div style="font-size:14px;font-weight:700;color:var(--ink);">The Kemper Design Services Discovery Session: What to Expect in 30 Minutes</div>
-                <div style="font-size:13px;color:var(--mid);margin-top:3px;">Video or phone — whatever works for you
-                </div>
-              </div>
-              <!-- Replace this placeholder with your Calendly or Cal.com embed -->
-              <div style="padding:28px 24px;text-align:center;">
-                <div style="font-size:32px;margin-bottom:10px;">📅</div>
-                <div style="font-size:14px;font-weight:600;color:var(--ink);margin-bottom:6px;">Calendar booking coming
-                  soon</div>
-                <p style="font-size:13px;color:var(--mid);line-height:1.6;margin-bottom:20px;">Drop in your Calendly or
-                  Cal.com widget here. In the meantime, use the form or email us directly.</p>
-                <a href="mailto:hello@kemperdesignservices.com?subject=Discovery Call Request" class="btn btn-primary"
-                  style="width:100%;justify-content:center;">
-                  Email to Book a Time
-                </a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Form column -->
-        <div class="contact-form-wrap">
-          <div style="background:rgba(74,103,245,.1);border:1px solid rgba(74,103,245,.2);border-radius:var(--radius);padding:24px;margin-bottom:32px;">
-            <h4 style="font-size:16px;font-weight:700;color:var(--ink);margin-bottom:8px;">Planning a complex project?</h4>
-            <p style="font-size:14px;color:var(--mid);margin-bottom:16px;">Our <strong>Discovery Session</strong> is the fastest way to get a specific proposal. It takes 2 minutes and helps us map your tech stack before we call.</p>
-            <a href="discovery.html" class="btn btn-primary" style="width:100%;justify-content:center;">Start Your Discovery Form →</a>
-          </div>
-
-          <h3 class="h3" style="margin-bottom:6px;">Or, send a general enquiry</h3>
-          <p style="font-size:14px;color:var(--mid);margin-bottom:32px;">For quick questions or support, use the form below. Takes about two minutes to fill in.</p>
-
-          <form action="https://formspree.io/f/mvzvowpa" method="POST">
-
+      <div class="discovery-container fade-up">
+        
+        <form action="https://formspree.io/f/mvzvowpa" method="POST">
+          
+          <!-- Section 1: Business Profile -->
+          <div class="form-section">
+            <h2 class="h3" style="margin-bottom: 24px;">01. Business Profile</h2>
+            
             <div class="form-row">
               <div class="form-group">
-                <label class="form-label" for="first-name">First name <span
-                    style="color:var(--accent);">*</span></label>
-                <input class="form-input" type="text" id="first-name" name="first_name" placeholder="Jane" required>
+                <label class="form-label" for="full-name">Your Full Name <span style="color:var(--accent);">*</span></label>
+                <input class="form-input" type="text" id="full-name" name="name" placeholder="Jane Smith" required>
               </div>
               <div class="form-group">
-                <label class="form-label" for="last-name">Last name <span style="color:var(--accent);">*</span></label>
-                <input class="form-input" type="text" id="last-name" name="last_name" placeholder="Smith" required>
+                <label class="form-label" for="email">Email Address <span style="color:var(--accent);">*</span></label>
+                <input class="form-input" type="email" id="email" name="email" placeholder="jane@company.com" required>
               </div>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="email">Email address <span style="color:var(--accent);">*</span></label>
-              <input class="form-input" type="email" id="email" name="email" placeholder="jane@yourbusiness.com"
-                required>
             </div>
 
             <div class="form-row">
               <div class="form-group">
-                <label class="form-label" for="business">Business name</label>
-                <input class="form-input" type="text" id="business" name="business" placeholder="Your Business Ltd">
+                <label class="form-label" for="company">Company Name <span style="color:var(--accent);">*</span></label>
+                <input class="form-input" type="text" id="company" name="company" placeholder="Acme Inc." required>
               </div>
               <div class="form-group">
-                <label class="form-label" for="phone">Phone (optional)</label>
-                <input class="form-input" type="tel" id="phone" name="phone" placeholder="+1 555 000 0000">
+                <label class="form-label" for="website">Website URL</label>
+                <input class="form-input" type="url" id="website" name="website" placeholder="https://">
               </div>
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="service">Which area interests you most?</label>
-              <select class="form-input" id="service" name="service">
-                <option value="" disabled selected>Select a service…</option>
-                <option value="strategy">AI Strategy Consulting — help me figure out where to start</option>
-                <option value="automation">Workflow Automation — stop the repetitive manual work</option>
-                <option value="chatbot">Chatbot & AI Assistant — handle enquiries without me</option>
-                <option value="integration">System Integrations — get my tools talking to each other</option>
-                <option value="custom">Custom Internal Tools — build something bespoke for my team</option>
-                <option value="scheduling">AI Auto Scheduling Attendant — automate my bookings</option>
-                <option value="training">Custom Training & SOPs — document my processes properly</option>
-                <option value="local-ai">Private AI Installation — keep my data off the cloud</option>
-                <option value="unsure">Not sure — I just know something needs to change</option>
+              <label class="form-label" for="team-size">Team Size (Full-time employees)</label>
+              <select class="form-input" id="team-size" name="team_size">
+                <option value="" disabled selected>Select team size...</option>
+                <option value="solo">Solo-operator</option>
+                <option value="2-10">2–10 members</option>
+                <option value="11-50">11–50 members</option>
+                <option value="51-200">51–200 members</option>
+                <option value="200+">200+ members</option>
               </select>
+            </div>
+          </div>
+
+          <!-- Section 2: Interests -->
+          <div class="form-section">
+            <h2 class="h3" style="margin-bottom: 8px;">02. Areas of Interest</h2>
+            <p style="font-size: 14px; color: var(--mid); margin-bottom: 24px;">Which services would you like to explore? (Select all that apply)</p>
+            
+            <div class="checkbox-grid">
+              <label class="checkbox-item"><input type="checkbox" name="interest" value="workflow_automation"> Workflow Automation</label>
+              <label class="checkbox-item"><input type="checkbox" name="interest" value="ai_chatbots"> AI Chatbots</label>
+              <label class="checkbox-item"><input type="checkbox" name="interest" value="doc_processing"> Document Processing</label>
+              <label class="checkbox-item"><input type="checkbox" name="interest" value="local_ai"> Local AI Deployment</label>
+              <label class="checkbox-item"><input type="checkbox" name="interest" value="custom_integrations"> Custom Integrations</label>
+              <label class="checkbox-item"><input type="checkbox" name="interest" value="websites_apps"> Websites & Apps</label>
+              <label class="checkbox-item"><input type="checkbox" name="interest" value="cybersecurity"> IT & Cybersecurity</label>
+              <label class="checkbox-item"><input type="checkbox" name="interest" value="ai_training"> AI Training & Education</label>
+              <label class="checkbox-item"><input type="checkbox" name="interest" value="instructional_design"> Instructional Design</label>
+              <label class="checkbox-item"><input type="checkbox" name="interest" value="graphic_design"> Graphic Design Services</label>
+            </div>
+          </div>
+
+          <!-- Section 3: Operational Bottlenecks -->
+          <div class="form-section">
+            <h2 class="h3" style="margin-bottom: 24px;">03. Operational Discovery</h2>
+            
+            <div class="form-group">
+              <label class="form-label" for="time-waste">What is your team's biggest "waste of time" right now?</label>
+              <textarea class="form-textarea" id="time-waste" name="time_waste" placeholder="Describe the repetitive, manual tasks that hold your business back..."></textarea>
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="employees">How many people work in your business?</label>
-              <select class="form-input" id="employees" name="employees">
-                <option value="" disabled selected>Select team size…</option>
-                <option value="solo">Just me</option>
-                <option value="2-5">2–5 people</option>
-                <option value="6-20">6–20 people</option>
-                <option value="21-50">21–50 people</option>
-                <option value="50+">50+ people</option>
-              </select>
+              <label class="form-label" for="goals">What are your primary goals for this consultation?</label>
+              <textarea class="form-textarea" id="goals" name="goals" placeholder="e.g. Save 10 hours a week, reduce error rates, scale without hiring..."></textarea>
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="message">What's eating your time right now? <span
-                  style="color:var(--accent);">*</span></label>
-              <textarea class="form-textarea" id="message" name="message"
-                placeholder="Describe the tasks or processes that frustrate you most — the things that feel like they should be easier, or that keep falling through the cracks. Any detail about your current tools or setup is useful too."
-                required></textarea>
+              <label class="form-label" for="software">What software/tools are you currently using? (Tech Stack)</label>
+              <textarea class="form-textarea" id="software" name="software" placeholder="e.g. HubSpot, Slack, Google Workspace, QuickBooks, Jane, etc."></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary"
-              style="width:100%;justify-content:center;padding:16px;font-size:15px;">
-              Send Message →
-            </button>
+            <div class="form-group">
+              <label class="form-label" for="experience">What automations or AI tools have you already tried?</label>
+              <textarea class="form-textarea" id="experience" name="experience" placeholder="Tell us what worked, what didn't, and what you're currently using..."></textarea>
+            </div>
+          </div>
 
-            <p style="font-size:12.5px;color:var(--muted);text-align:center;margin-top:16px;line-height:1.6;">We'll
-              reply within one business day. Your information stays private — no spam, ever.</p>
-          </form>
-        </div>
+          <!-- Section 4: Budget & Timeline -->
+          <div class="form-section">
+            <h2 class="h3" style="margin-bottom: 24px;">04. Logistics</h2>
+            
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="budget">Allocated Budget (Estimated)</label>
+                <select class="form-input" id="budget" name="budget">
+                  <option value="" disabled selected>Select range...</option>
+                  <option value="999-3k">$999 – $3,000</option>
+                  <option value="3k-10k">$3,000 – $10,000</option>
+                  <option value="10k-50k">$10,000 – $50,000</option>
+                  <option value="enterprise">$50,000+</option>
+                  <option value="unsure">Not yet determined</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="timeline">Desired Start Date</label>
+                <select class="form-input" id="timeline" name="timeline">
+                  <option value="" disabled selected>Select timeline...</option>
+                  <option value="immediate">As soon as possible</option>
+                  <option value="month">Within 30 days</option>
+                  <option value="quarter">Within next quarter</option>
+                  <option value="future">Just exploring for now</option>
+                </select>
+              </div>
+            </div>
+          </div>
 
-        <input type="hidden" name="_subject" value="New AI Consultation Request">
-        <input type="hidden" name="_redirect" value="https://kemperdesignservices.com/thank-you.html">
+          <input type="hidden" name="_subject" value="New AI Consultation Discovery Form">
+          <input type="hidden" name="_redirect" value="https://kemperdesignservices.com/thank-you.html">
 
-      </div>
-    </div>
-  </section>
+          <button type="submit" class="btn btn-primary" style="width: 100%; padding: 20px; font-size: 16px;">
+            Request My Session Proposal →
+          </button>
+          
+          <p style="text-align: center; font-size: 13px; color: var(--mid); margin-top: 16px;">We typically review and reply to discovery forms within one business day.</p>
 
-  <!-- ── FAQ ── -->
-  <section class="section section--alt">
-    <div class="container">
-      <div class="section-header">
-        <span class="eyebrow">Good Questions, Straight Answers</span>
-        <h2 class="h2">Things most people want to know before reaching out.</h2>
-        <p class="lead">We'd rather answer these upfront than have you spend the first half of a call asking them.</p>
-      </div>
-      <div class="problem-grid" style="margin-top:64px;">
-        <div class="problem-card">
-          <div class="problem-icon">🎯</div>
-          <h3 class="h3">Do I need to be technical?</h3>
-          <p>No. We handle everything on the technical side. Our job is to make sure you understand what we're building
-            and why — in plain language, not jargon. If something doesn't make sense, ask.</p>
-        </div>
-        <div class="problem-card">
-          <div class="problem-icon">💰</div>
-          <h3 class="h3">How much does it cost?</h3>
-          <p>Every project is different, so we won't give you a number before we understand what you need. After the
-            discovery call, you'll receive a written proposal with a fixed price before any work starts.</p>
-        </div>
-        <div class="problem-card">
-          <div class="problem-icon">⏱️</div>
-          <h3 class="h3">How quickly will I see results?</h3>
-          <p>Most projects go live within 2–6 weeks. 90% of clients report a measurable ROI within 60 days. We track
-            this with you — and tell you when something isn't performing as expected.</p>
-        </div>
-        <div class="problem-card">
-          <div class="problem-icon">🔒</div>
-          <h3 class="h3">What happens to my business data?</h3>
-          <p>Nothing leaves your hands without your knowledge. We never store, sell, or train on your data. Privacy is a
-            hard requirement on every project — not an optional extra.</p>
-        </div>
-        <div class="problem-card">
-          <div class="problem-icon">🔄</div>
-          <h3 class="h3">What if something doesn't work?</h3>
-          <p>If any tool we build underperforms in the first 30 days after launch, we fix it at no extra cost. That's
-            not a special guarantee — it's just how we operate.</p>
-        </div>
-        <div class="problem-card">
-          <div class="problem-icon">📞</div>
-          <h3 class="h3">What does support look like after launch?</h3>
-          <p>You'll have a named contact, a monthly check-in call, and direct access to us for questions. We don't
-            disappear after launch — a growing business always has new things to work on.</p>
-        </div>
+        </form>
+
       </div>
     </div>
   </section>

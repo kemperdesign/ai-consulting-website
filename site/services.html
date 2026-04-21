@@ -10,525 +10,610 @@
 
 <body>
 
+  <!-- Offcanvas overlay -->
+  <div class="offcanvas-overlay" id="offcanvas-overlay" onclick="closeMobileNav()"></div>
+  <div class="mobile-nav" id="mobile-nav">
+    <button class="mobile-close" onclick="closeMobileNav()" aria-label="Close menu">✕</button>
+    <ul style="display:flex;flex-direction:column;gap:4px;margin-top:20px;">
+      <li><a href="index.html" style="display:block;padding:10px 0;font-family:var(--heading-font);font-weight:500;color:var(--heading-color);">Home</a></li>
+      <li><a href="about.html" style="display:block;padding:10px 0;font-family:var(--heading-font);font-weight:500;color:var(--heading-color);">About</a></li>
+      <li><a href="services.html" style="display:block;padding:10px 0;font-family:var(--heading-font);font-weight:500;color:var(--heading-color);">Services</a></li>
+      <li><a href="products.html" style="display:block;padding:10px 0;font-family:var(--heading-font);font-weight:500;color:var(--heading-color);">Products</a></li>
+      <li><a href="consulting.html" style="display:block;padding:10px 0;font-family:var(--heading-font);font-weight:500;color:var(--heading-color);">Consulting</a></li>
+      <li><a href="faq.html" style="display:block;padding:10px 0;font-family:var(--heading-font);font-weight:500;color:var(--heading-color);">FAQ</a></li>
+      <li><a href="blog.html" style="display:block;padding:10px 0;font-family:var(--heading-font);font-weight:500;color:var(--heading-color);">Blog</a></li>
+      <li><a href="contact.html" style="display:block;padding:10px 0;font-family:var(--heading-font);font-weight:500;color:var(--heading-color);">Contact</a></li>
+    </ul>
+    <a href="discovery.html" class="btn btn-primary" style="margin-top:24px;width:100%;justify-content:center;">Get a Quote →</a>
+  </div>
+
   <!-- ── Navigation ── -->
   <nav>
     <div class="nav-inner">
-      <a href="index.html" class="logo">Kemper <span>Design Services</span></a>
+      <a href="index.html" class="logo">
+        <img src="assets/logos/logo-white.png" alt="Kemper Design Services" style="height:44px;width:auto;" />
+      </a>
+
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html" aria-current="page">Services</a></li>
-        <li><a href="testimonials.html">Results</a></li>
+        <li class="nav-item"><a href="index.html">Home</a></li>
+        <li class="nav-item"><a href="about.html">About</a></li>
+
+                <li class="nav-item nav-item--mega">
+          <a href="services.html">Services</a>
+          <div class="nav-megamenu">
+            <div class="mega-col">
+              <span class="mega-heading">AI & Automation</span>
+              <a href="service-automation.html">AI Workflow Integration</a>
+              <a href="service-chatbot.html">AI Chatbots & Assistants</a>
+              <a href="service-custom-ai.html">Custom Internal AI Tools</a>
+              <a href="service-integrations.html">System Integrations</a>
+              <a href="service-automation.html">Local AI Deployment</a>
+              <a href="service-automation.html">Document Processing</a>
+            </div>
+            <div class="mega-col">
+              <span class="mega-heading">Design & Development</span>
+              <a href="service-websites.html">Custom Websites</a>
+              <a href="service-apps.html">Custom Applications</a>
+              <a href="service-design.html">Graphic Design</a>
+              <a href="service-design.html">Brand Identity</a>
+              <a href="service-apps.html">UI/UX Design</a>
+              <a href="service-apps.html">Frontend Development</a>
+            </div>
+            <div class="mega-col">
+              <span class="mega-heading">Operations & Training</span>
+              <a href="service-scheduling.html">AI Auto-Scheduler</a>
+              <a href="service-training.html">Instructional Design</a>
+              <a href="service-training.html">AI Training & Education</a>
+              <a href="service-training.html">Employee Onboarding</a>
+              <a href="service-training.html">Custom Training Apps</a>
+              <a href="service-automation.html">Process Optimization</a>
+            </div>
+            <div class="mega-col">
+              <span class="mega-heading">IT & Security</span>
+              <a href="service-integrations.html">Cybersecurity Solutions</a>
+              <a href="service-integrations.html">IT Infrastructure</a>
+              <a href="service-integrations.html">Data Protection</a>
+              <a href="service-integrations.html">System Integration</a>
+              <a href="service-integrations.html">Cloud Solutions</a>
+              <a href="service-integrations.html">Network Management</a>
+            </div>
+            <div class="mega-col">
+              <span class="mega-heading">Creative & Specialty</span>
+              <a href="service-video.html">Video Editing</a>
+              <a href="service-music.html">Custom Music Production</a>
+              <a href="service-3dprinting.html">3D Printing</a>
+              <a href="service-notary.html">Digital Notary</a>
+              <a href="service-conversions.html">Data/Format Conversion</a>
+              <a href="service-training.html">Content Creation</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="nav-item"><a href="products.html">Products</a></li>
+        <li class="nav-item"><a href="consulting.html">Consulting</a></li>
+        <li class="nav-item"><a href="faq.html">FAQ</a></li>
+        <li class="nav-item"><a href="blog.html">Blog</a></li>
+        <li class="nav-item"><a href="contact.html">Contact</a></li>
       </ul>
-      <a href="contact.html" class="btn btn-primary nav-cta" style="padding:10px 20px;font-size:14px;">Book a Call</a>
+      <div class="nav-cta-wrapper">
+        <button class="nav-search-btn" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <a href="discovery.html" class="btn btn-primary nav-cta">Get a Quote <span class="btn-arrow">→</span></a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu" onclick="openMobileNav()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
   <!-- ── Page Hero ── -->
-  <section class="page-hero">
-    <div class="page-hero-content fade-up">
+  <section class="page-hero" style="isolation:isolate;overflow:hidden;">
+    <div class="aurora-layer" aria-hidden="true" style="opacity:.28;"></div>
+    <div class="page-hero-content fade-up" style="position:relative;z-index:2;">
       <span class="eyebrow" style="color:rgba(255,255,255,.55);">What We Build</span>
-      <h1 class="h1">Eight services. One goal: a business that runs without you carrying everything.</h1>
-      <p class="lead">Each service is scoped to your specific situation, priced transparently, and built to show a clear return — usually within 60 days of going live.</p>
+      <h1 class="h1">Custom solutions. One goal: a business that runs for you — not the other way around.</h1>
+      <p class="lead">From automated workflows to physical prototypes and creative content, we build the tools and assets that handle the repeat work so you can stay in your zone of genius.</p>
     </div>
   </section>
 
-  <!-- ── Service 1: AI Strategy ── -->
-  <section id="strategy" class="section">
+  <!-- ── Services Grid ── -->
+  <style>
+    .services-overview-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 60px;
+    }
+    .service-overview-card {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 32px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: all .3s ease;
+    }
+    .service-overview-card:hover {
+      border-color: var(--accent-green);
+      box-shadow: 0 12px 40px rgba(0,0,0,.12);
+      transform: translateY(-4px);
+    }
+    .service-overview-card .icon {
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+    .service-overview-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--heading-color);
+      margin: 0;
+    }
+    .service-overview-card p {
+      font-size: 14px;
+      color: var(--text-color);
+      line-height: 1.6;
+      margin: 0;
+      flex: 1;
+    }
+    .service-overview-card a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--accent-green);
+      font-weight: 600;
+      font-size: 13px;
+      text-decoration: none;
+      transition: gap .2s;
+      margin-top: 8px;
+    }
+    .service-overview-card a:hover {
+      gap: 10px;
+    }
+    @media (max-width: 640px) {
+      .services-overview-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+  <section class="section">
     <div class="container">
-      <div class="solution-inner">
-        <div>
-          <span class="eyebrow">Service 01</span>
-          <h2 class="h2">AI Strategy Consulting</h2>
-          <p class="lead">The right starting point if you want to know where automation can genuinely help before spending anything on it. We audit your operations and hand you a clear, ranked plan.</p>
+      <div style="margin-bottom:40px;">
+        <span class="eyebrow">Our Services</span>
+        <h2 class="h2">Everything your business needs</h2>
+        <p class="lead" style="margin-top:20px;">From workflow automation to custom design, we build solutions that scale with your growth.</p>
+      </div>
+      <div class="services-overview-grid">
+        <div class="service-overview-card">
+          <div class="icon">⚙️</div>
+          <h3>AI Workflow Automation</h3>
+          <p>Automate repetitive tasks and connect your tools so data flows automatically.</p>
+          <a href="service-automation.html">Explore →</a>
+        </div>
+        <div class="service-overview-card">
+          <div class="icon">💬</div>
+          <h3>AI Chatbots & Assistants</h3>
+          <p>An assistant that knows your business and qualifies leads 24/7.</p>
+          <a href="service-chatbot.html">Explore →</a>
+        </div>
+        <div class="service-overview-card">
+          <div class="icon">🔗</div>
+          <h3>System Integrations</h3>
+          <p>Connect your tools so data flows automatically across platforms.</p>
+          <a href="service-integrations.html">Explore →</a>
+        </div>
+        <div class="service-overview-card">
+          <div class="icon">🤖</div>
+          <h3>Custom Internal AI Tools</h3>
+          <p>Bespoke AI tools for your team — document drafters, policy search, and more.</p>
+          <a href="service-custom-ai.html">Explore →</a>
+        </div>
+        <div class="service-overview-card">
+          <div class="icon">💼</div>
+          <h3>Custom Application Design</h3>
+          <p>When off-the-shelf doesn't fit, we build applications that match your workflow.</p>
+          <a href="service-apps.html">Explore →</a>
+        </div>
+        <div class="service-overview-card">
+          <div class="icon">🌐</div>
+          <h3>Custom Websites</h3>
+          <p>Professional sites designed to convert visitors into customers.</p>
+          <a href="service-websites.html">Explore →</a>
+        </div>
+        <div class="service-overview-card">
+          <div class="icon">🎨</div>
+          <h3>Identity & Graphic Design</h3>
+          <p>Logos, brand identity, and visual assets that communicate professionalism.</p>
+          <a href="service-design.html">Explore →</a>
+        </div>
+        <div class="service-overview-card">
+          <div class="icon">📚</div>
+          <h3>Instructional Training</h3>
+          <p>Training systems and SOPs that ensure your team masters tools efficiently.</p>
+          <a href="service-training.html">Explore →</a>
+        </div>
+        <div class="service-overview-card">
+          <div class="icon">📋</div>
+          <h3>Digital Notary</h3>
+          <p>Fast, accurate, and professional notary services for all document types.</p>
+          <a href="service-notary.html">Explore →</a>
+        </div>
+        <div class="service-overview-card">
+          <div class="icon">📄</div>
+          <h3>Data/Format Conversion</h3>
+          <p>Convert documents and media across any format with data integrity.</p>
+          <a href="service-conversions.html">Explore →</a>
+        </div>
+        <div class="service-overview-card">
+          <div class="icon">🎬</div>
+          <h3>Video Editing</h3>
+          <p>Professional editing for social media, training videos, and promotional content.</p>
+          <a href="service-video.html">Explore →</a>
+        </div>
+        <div class="service-overview-card">
+          <div class="icon">🖨️</div>
+          <h3>3D Printing</h3>
+          <p>Precision 3D printing for functional parts and prototypes in days.</p>
+          <a href="service-3dprinting.html">Explore →</a>
+        </div>
+        <div class="service-overview-card">
+          <div class="icon">🎵</div>
+          <h3>Custom Music Production</h3>
+          <p>Original sound and custom music for your brand and video content.</p>
+          <a href="service-music.html">Explore →</a>
+        </div>
+        <div class="service-overview-card">
+          <div class="icon">📅</div>
+          <h3>AI Auto-Scheduler</h3>
+          <p>Stop the "when are you free" dance — let AI handle your entire booking flow.</p>
+          <a href="service-scheduling.html">Explore →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+          <p class="lead">An assistant that knows your business, answers questions accurately, and qualifies leads around the clock without you being available.</p>
           <ul class="solution-list">
             <li>
               <span class="check">✓</span>
               <div>
-                <h3 class="h3">A real operations audit — not a survey</h3>
-                <p>We talk to you and your team, map your actual workflows, and calculate how much time each task costs you per week. We don't guess.</p>
+                <h3 class="h3">Trained on your knowledge</h3>
+                <p>Built using your own FAQs, services, and policies — so answers are accurate and reflect your brand voice.</p>
               </div>
             </li>
             <li>
               <span class="check">✓</span>
               <div>
-                <h3 class="h3">A prioritised roadmap you can act on</h3>
-                <p>You get a ranked list of automation opportunities — ordered by return, not complexity — with honest cost estimates and timelines. You choose what to do first.</p>
-              </div>
-            </li>
-            <li>
-              <span class="check">✓</span>
-              <div>
-                <h3 class="h3">Straight talk on what won't work</h3>
-                <p>If automation isn't the right answer for part of your business, we'll tell you. Honesty up front saves everyone time and money.</p>
+                <h3 class="h3">Direct Bookings</h3>
+                <p>Integrated with your calendar to book calls on the spot, turning conversations into appointments.</p>
               </div>
             </li>
           </ul>
           <div style="margin-top:32px;">
-            <a href="contact.html" class="btn btn-primary">Book a Strategy Session</a>
-          </div>
-        </div>
-        <div class="solution-visual">
-          <span class="tag" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);">What you get</span>
-          <div class="stat-row">
-            <div class="stat-box">
-              <div class="num">30 min</div>
-              <div class="lbl">Free discovery call before any commitment</div>
-            </div>
-            <div class="stat-box">
-              <div class="num">1 week</div>
-              <div class="lbl">Full roadmap delivered after the audit</div>
-            </div>
-            <div class="stat-box">
-              <div class="num">Fixed</div>
-              <div class="lbl">Flat fee, agreed before we start</div>
-            </div>
-            <div class="stat-box">
-              <div class="num">Yours</div>
-              <div class="lbl">You own the roadmap — no strings attached</div>
-            </div>
+            <a href="discovery.html" class="btn btn-primary">Build My Assistant</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── Service 2: Workflow Automation ── -->
-  <section id="automation" class="section section--alt">
-    <div class="container">
-      <div class="solution-inner">
-        <div class="solution-visual">
-          <span class="tag" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);">Things we automate</span>
-          <div style="margin-top:28px;position:relative;z-index:1;display:flex;flex-direction:column;gap:12px;">
-            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:15px 18px;">
-              <div style="font-size:13px;font-weight:600;color:var(--white);">📅 Appointment booking & reminders</div>
-              <div style="font-size:12.5px;color:rgba(255,255,255,.45);margin-top:3px;">Confirmations sent, no-shows chased, calendar updated — without anyone lifting a finger</div>
-            </div>
-            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:15px 18px;">
-              <div style="font-size:13px;font-weight:600;color:var(--white);">🧾 Invoice creation & payment follow-up</div>
-              <div style="font-size:12.5px;color:rgba(255,255,255,.45);margin-top:3px;">Invoices generated at job completion, reminders sent on schedule</div>
-            </div>
-            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:15px 18px;">
-              <div style="font-size:13px;font-weight:600;color:var(--white);">📥 Lead capture & routing</div>
-              <div style="font-size:12.5px;color:rgba(255,255,255,.45);margin-top:3px;">Inbound leads scored and delivered to the right person, instantly</div>
-            </div>
-            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:15px 18px;">
-              <div style="font-size:13px;font-weight:600;color:var(--white);">📊 Reports & data entry</div>
-              <div style="font-size:12.5px;color:rgba(255,255,255,.45);margin-top:3px;">Spreadsheets, CRMs, and dashboards updated automatically from any source</div>
-            </div>
-          </div>
-        </div>
-        <div>
-          <span class="eyebrow">Service 02</span>
-          <h2 class="h2">Workflow Automation</h2>
-          <p class="lead">We find the tasks your team does on repeat every day and build systems that handle them without being asked. The average client gets 12 hours back per week — in the first month.</p>
-          <ul class="solution-list">
-            <li>
-              <span class="check">✓</span>
-              <div>
-                <h3 class="h3">Works with what you already use</h3>
-                <p>We connect to your existing CRM, email, calendar, and accounting tools. Nothing gets replaced — everything gets connected.</p>
-              </div>
-            </li>
-            <li>
-              <span class="check">✓</span>
-              <div>
-                <h3 class="h3">Built to be reliable, not just fast</h3>
-                <p>Every automation includes error handling and monitoring. You'll know immediately if something fails — before it causes a problem.</p>
-              </div>
-            </li>
-            <li>
-              <span class="check">✓</span>
-              <div>
-                <h3 class="h3">No maintenance required from you</h3>
-                <p>Once it's running, it runs. We monitor it on your behalf and handle any adjustments as your business changes.</p>
-              </div>
-            </li>
-          </ul>
-          <div style="margin-top:32px;">
-            <a href="contact.html" class="btn btn-primary">Start Saving Time</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Service 3: Chatbot ── -->
-  <section id="chatbot" class="section">
+  <!-- ── System Integrations ── -->
+  <section id="integrations" class="section">
     <div class="container">
       <div class="solution-inner">
         <div>
-          <span class="eyebrow">Service 03</span>
-          <h2 class="h2">Chatbot & AI Assistant Development</h2>
-          <p class="lead">Customers ask questions at 11pm. They want answers immediately. A well-built assistant gives them that — without you having to be available around the clock.</p>
-          <ul class="solution-list">
-            <li>
-              <span class="check">✓</span>
-              <div>
-                <h3 class="h3">Trained on your actual business</h3>
-                <p>Built using your own FAQs, services, pricing, and policies — so answers are accurate, consistent, and sound like you, not a generic bot.</p>
-              </div>
-            </li>
-            <li>
-              <span class="check">✓</span>
-              <div>
-                <h3 class="h3">Takes bookings and qualifies leads</h3>
-                <p>Goes beyond answering questions. It can schedule appointments, collect contact details, and filter out tyre-kickers before handing off to your team.</p>
-              </div>
-            </li>
-            <li>
-              <span class="check">✓</span>
-              <div>
-                <h3 class="h3">Hands off cleanly when needed</h3>
-                <p>When something genuinely needs a human, the assistant escalates — with full context attached, so no one has to ask the customer to repeat themselves.</p>
-              </div>
-            </li>
-            <li>
-              <span class="check">✓</span>
-              <div>
-                <h3 class="h3">Deploys where your customers already are</h3>
-                <p>Website chat, WhatsApp, Instagram DMs, Facebook Messenger. We go where the conversations happen, not where it's easiest to set up.</p>
-              </div>
-            </li>
-          </ul>
-          <div style="margin-top:32px;">
-            <a href="contact.html" class="btn btn-primary">Build My Assistant</a>
-          </div>
-        </div>
-        <div class="solution-visual">
-          <span class="tag" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);">Client result</span>
-          <div style="margin-top:28px;position:relative;z-index:1;">
-            <div class="stars">★★★★★</div>
-            <blockquote style="font-size:15px;color:rgba(255,255,255,.80);line-height:1.8;font-style:normal;margin-top:14px;">"Our assistant handles 70% of customer queries now. Response times went from four hours to two minutes — and our team stopped dreading Monday mornings."</blockquote>
-            <div style="display:flex;align-items:center;gap:12px;margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);">
-              <div class="avatar avatar-b" style="width:40px;height:40px;font-size:13px;">MR</div>
-              <div>
-                <div style="font-weight:700;font-size:14px;color:var(--white);">Marcus Reid</div>
-                <div style="font-size:12px;color:rgba(255,255,255,.45);">CEO, TileWorks Direct</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Service 4: System Integrations ── -->
-  <section id="integrations" class="section section--alt">
-    <div class="container">
-      <div class="solution-inner">
-        <div class="solution-visual">
-          <span class="tag" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);">What we connect</span>
-          <div style="margin-top:24px;position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:12px 14px;font-size:13px;font-weight:600;color:rgba(255,255,255,.8);">📬 CRM & Email</div>
-            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:12px 14px;font-size:13px;font-weight:600;color:rgba(255,255,255,.8);">📅 Booking & Calendars</div>
-            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:12px 14px;font-size:13px;font-weight:600;color:rgba(255,255,255,.8);">🧾 Accounting & Invoicing</div>
-            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:12px 14px;font-size:13px;font-weight:600;color:rgba(255,255,255,.8);">📦 Inventory & Orders</div>
-            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:12px 14px;font-size:13px;font-weight:600;color:rgba(255,255,255,.8);">📊 Reporting & Dashboards</div>
-            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:12px 14px;font-size:13px;font-weight:600;color:rgba(255,255,255,.8);">💬 Support & Comms</div>
-          </div>
-          <div style="margin-top:18px;padding:16px;background:rgba(74,103,245,.15);border:1px solid rgba(74,103,245,.25);border-radius:12px;font-size:13.5px;color:rgba(255,255,255,.7);position:relative;z-index:1;">
-            Already using specific platforms? We almost certainly support them. Just ask.
-          </div>
-        </div>
-        <div>
-          <span class="eyebrow">Service 04</span>
           <h2 class="h2">System Integrations</h2>
-          <p class="lead">Your tools probably don't talk to each other. So your team fills the gaps manually, every day. We fix that — connecting your systems so data flows automatically and nothing gets lost between apps.</p>
+          <p class="lead">Your tools probably don't talk to each other. We connect them so data flows automatically — no more manual transfers or copy-pasting.</p>
           <ul class="solution-list">
             <li>
               <span class="check">✓</span>
               <div>
-                <h3 class="h3">One version of the truth</h3>
-                <p>Customer data, orders, and communications flow into a single view. No more checking three different apps to get a full picture.</p>
+                <h3 class="h3">Unified Data Hub</h3>
+                <p>Integrate CRM, accounting, and email platforms so every platform has the same current information.</p>
               </div>
             </li>
             <li>
               <span class="check">✓</span>
               <div>
-                <h3 class="h3">Manual data entry, eliminated</h3>
-                <p>When a job completes, your CRM updates, your invoice is created, your calendar clears. All without anyone doing it by hand.</p>
-              </div>
-            </li>
-            <li>
-              <span class="check">✓</span>
-              <div>
-                <h3 class="h3">Grows as your business does</h3>
-                <p>Integrations built to handle higher volumes without breaking down. As you scale, your systems scale with you.</p>
+                <h3 class="h3">Custom Bridges</h3>
+                <p>We build custom APIs and bridges to connect legacy software that won't speak to modern apps.</p>
               </div>
             </li>
           </ul>
           <div style="margin-top:32px;">
-            <a href="contact.html" class="btn btn-primary">Connect My Systems</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Service 5: Custom Tools ── -->
-  <section id="custom" class="section">
-    <div class="container">
-      <div class="solution-inner">
-        <div>
-          <span class="eyebrow">Service 05</span>
-          <h2 class="h2">Custom Internal AI Tools</h2>
-          <p class="lead">Sometimes off-the-shelf doesn't fit. We build bespoke tools for your team — trained on your data, built around your processes, used only inside your business.</p>
-          <ul class="solution-list">
-            <li>
-              <span class="check">✓</span>
-              <div>
-                <h3 class="h3">A knowledge assistant for your team</h3>
-                <p>Answers staff questions using your own documents, SOPs, pricing, and policies — instantly, accurately, without needing to find the right person to ask.</p>
-              </div>
-            </li>
-            <li>
-              <span class="check">✓</span>
-              <div>
-                <h3 class="h3">Automated document generation</h3>
-                <p>Proposals, reports, contracts, briefing notes. Your team gives it the key details — it builds a professional draft, ready to review in seconds.</p>
-              </div>
-            </li>
-            <li>
-              <span class="check">✓</span>
-              <div>
-                <h3 class="h3">Decision support that surfaces what matters</h3>
-                <p>Tools that flag anomalies, highlight opportunities, and present the right information at the right time — so your team acts faster and makes fewer costly mistakes.</p>
-              </div>
-            </li>
-            <li>
-              <span class="check">✓</span>
-              <div>
-                <h3 class="h3">Fully private. Fully yours.</h3>
-                <p>Your data never trains public models. Every tool we build is private, owned entirely by your business, and built with security as a hard requirement.</p>
-              </div>
-            </li>
-          </ul>
-          <div style="margin-top:32px;">
-            <a href="contact.html" class="btn btn-primary">Discuss a Custom Build</a>
+            <a href="discovery.html" class="btn btn-primary">Connect My Tools</a>
           </div>
         </div>
         <div class="solution-visual">
-          <span class="tag" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);">Tools we've built</span>
-          <div style="margin-top:28px;position:relative;z-index:1;display:flex;flex-direction:column;gap:12px;">
-            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:15px 18px;">
-              <div style="font-size:13px;font-weight:600;color:var(--white);">🤖 Internal knowledge assistant</div>
-              <div style="font-size:12.5px;color:rgba(255,255,255,.45);margin-top:3px;">Answers staff questions from company documents, SOPs, and policy files</div>
-            </div>
-            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:15px 18px;">
-              <div style="font-size:13px;font-weight:600;color:var(--white);">📝 Proposal & quote builder</div>
-              <div style="font-size:12.5px;color:rgba(255,255,255,.45);margin-top:3px;">Generates accurate proposals from a short brief, in your brand voice</div>
-            </div>
-            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:15px 18px;">
-              <div style="font-size:13px;font-weight:600;color:var(--white);">📈 Sales performance analyser</div>
-              <div style="font-size:12.5px;color:rgba(255,255,255,.45);margin-top:3px;">Surfaces insights from sales data and flags drop-off points automatically</div>
-            </div>
-            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:15px 18px;">
-              <div style="font-size:13px;font-weight:600;color:var(--white);">🎯 Customer churn predictor</div>
-              <div style="font-size:12.5px;color:rgba(255,255,255,.45);margin-top:3px;">Identifies at-risk customers before they leave so you can act first</div>
-            </div>
+          <span class="tag" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);">Connectivity</span>
+          <div style="margin-top:24px; border-radius:12px; overflow:hidden; border: 1px solid rgba(255,255,255,0.1);"><img src="assets/images/svc_integrations.png" alt="integrations service" style="width:100%; display:block;" /></div>
+        </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── Service 6: AI Auto Scheduling ── -->
-  <section id="scheduling" class="section section--alt">
+  <!-- ── Custom Internal AI Tools ── -->
+  <section id="custom" class="section section--alt">
     <div class="container">
       <div class="solution-inner">
         <div class="solution-visual">
-          <span class="tag" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);">What it handles automatically</span>
-          <div style="margin-top:28px;position:relative;z-index:1;display:flex;flex-direction:column;gap:12px;">
-            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:15px 18px;">
-              <div style="font-size:13px;font-weight:600;color:var(--white);">📞 Inbound booking via phone, text, or chat</div>
-              <div style="font-size:12.5px;color:rgba(255,255,255,.45);margin-top:3px;">Takes new appointments 24/7 — even when your front desk is closed</div>
-            </div>
-            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:15px 18px;">
-              <div style="font-size:13px;font-weight:600;color:var(--white);">🔔 Reminders & confirmation sequences</div>
-              <div style="font-size:12.5px;color:rgba(255,255,255,.45);margin-top:3px;">Automated multi-step reminders cut no-show rates by 30–50%</div>
-            </div>
-            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:15px 18px;">
-              <div style="font-size:13px;font-weight:600;color:var(--white);">🔄 Rescheduling & cancellation handling</div>
-              <div style="font-size:12.5px;color:rgba(255,255,255,.45);margin-top:3px;">Customers self-serve changes without calling — and cancelled slots get filled automatically</div>
-            </div>
-            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:15px 18px;">
-              <div style="font-size:13px;font-weight:600;color:var(--white);">📅 Live calendar sync across all platforms</div>
-              <div style="font-size:12.5px;color:rgba(255,255,255,.45);margin-top:3px;">Works with Google Calendar, Outlook, Calendly, Jane, and most booking systems</div>
-            </div>
-          </div>
+          <span class="tag" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);">Private AI</span>
+          <div style="margin-top:24px; border-radius:12px; overflow:hidden; border: 1px solid rgba(255,255,255,0.1);"><img src="assets/images/svc_custom_ai.png" alt="custom service" style="width:100%; display:block;" /></div>
         </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Custom Application Design ── -->
+  <section id="apps" class="section">
+    <div class="container">
+      <div class="solution-inner">
         <div>
-          <span class="eyebrow">Service 06</span>
-          <h2 class="h2">AI Auto Scheduling Attendant</h2>
-          <p class="lead">An AI attendant that handles your entire booking operation — inbound calls, texts, online chat — without a human on the other end. It books, confirms, reminds, and reschedules, around the clock.</p>
+          <h2 class="h2">Custom Application Design</h2>
+          <p class="lead">When off-the-shelf software doesn't fit, we build it. We design custom internal tools, client portals, and business applications.</p>
           <ul class="solution-list">
             <li>
               <span class="check">✓</span>
               <div>
-                <h3 class="h3">Never miss a booking again</h3>
-                <p>The average business loses 20–30% of bookings to missed calls and slow responses. An AI attendant captures every enquiry — nights, weekends, and holidays included.</p>
-              </div>
-            </li>
-            <li>
-              <span class="check">✓</span>
-              <div>
-                <h3 class="h3">No-shows cut by up to 50%</h3>
-                <p>Multi-step confirmation and reminder sequences — sent at the right time via the right channel — are proven to slash no-show rates. Fewer empty slots means more revenue from the same schedule.</p>
-              </div>
-            </li>
-            <li>
-              <span class="check">✓</span>
-              <div>
-                <h3 class="h3">Front-desk call volume down 60%</h3>
-                <p>Most scheduling calls are routine. The attendant handles them so your team can focus on the work that actually needs a person.</p>
-              </div>
-            </li>
-            <li>
-              <span class="check">✓</span>
-              <div>
-                <h3 class="h3">Typical ROI: $15,000–$30,000/year</h3>
-                <p>Recovered from previously lost bookings, reduced no-shows, and hours freed from manual scheduling — all from a system that runs itself.</p>
+                <h3 class="h3">Built around your process</h3>
+                <p>We build the software to match your existing, successful workflows, not the other way around.</p>
               </div>
             </li>
           </ul>
           <div style="margin-top:32px;">
-            <a href="contact.html" class="btn btn-primary">Set Up My Scheduling Attendant</a>
+            <a href="discovery.html" class="btn btn-primary">Discuss Your Application</a>
           </div>
+        </div>
+        <div class="solution-visual">
+          <span class="tag" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);">Bespoke Software</span>
+          <div style="margin-top:24px; border-radius:12px; overflow:hidden; border: 1px solid rgba(255,255,255,0.1);"><img src="assets/images/svc_apps.png" alt="apps service" style="width:100%; display:block;" /></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── Service 7: Custom Training & SOPs ── -->
-  <section id="training" class="section">
+  <!-- ── Custom Websites ── -->
+  <section id="websites" class="section section--alt">
+    <div class="container">
+      <div class="solution-inner">
+        <div class="solution-visual">
+          <span class="tag" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);">Web Standards</span>
+          <div style="margin-top:24px; border-radius:12px; overflow:hidden; border: 1px solid rgba(255,255,255,0.1);"><img src="assets/images/svc_websites.png" alt="websites service" style="width:100%; display:block;" /></div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Graphic Design ── -->
+  <section id="design" class="section">
     <div class="container">
       <div class="solution-inner">
         <div>
-          <span class="eyebrow">Service 07</span>
-          <h2 class="h2">Custom Staff Training & SOPs</h2>
-          <p class="lead">Your business runs on specific software. Your staff need to know how to use it — for your operation, not the generic version. We build the training and SOPs that actually match what your team does every day.</p>
+          <h2 class="h2">Graphic Design</h2>
+          <p class="lead">From a single logo to a full brand identity, we create visual assets that communicate professionalism and authority.</p>
           <ul class="solution-list">
             <li>
               <span class="check">✓</span>
               <div>
-                <h3 class="h3">Powered by our proprietary skills-mapping software</h3>
-                <p>Our tool analyses your specific operation — your tools, your workflows, your roles — and identifies exactly which skills each employee needs to perform. No guesswork, no irrelevant training.</p>
-              </div>
-            </li>
-            <li>
-              <span class="check">✓</span>
-              <div>
-                <h3 class="h3">SOPs built around your actual processes</h3>
-                <p>Not templated. Not generic. Every standard operating procedure is written to reflect how your business specifically runs — so staff follow what's real, not what's theoretical.</p>
-              </div>
-            </li>
-            <li>
-              <span class="check">✓</span>
-              <div>
-                <h3 class="h3">Faster onboarding. Fewer mistakes.</h3>
-                <p>New hires get up to speed on your software and workflows in days, not weeks. Consistent documented processes mean less reliance on who-knows-what in someone's head.</p>
-              </div>
-            </li>
-            <li>
-              <span class="check">✓</span>
-              <div>
-                <h3 class="h3">Living documents that stay current</h3>
-                <p>As your software or workflows change, we update the training and SOPs to match. Your documentation is never six months out of date.</p>
+                <h3 class="h3">Logos & Brand Identity</h3>
+                <p>Visual branding that captures your business's personality and stays consistent across channels.</p>
               </div>
             </li>
           </ul>
           <div style="margin-top:32px;">
-            <a href="contact.html" class="btn btn-primary">Build My Training System</a>
+            <a href="discovery.html" class="btn btn-primary">Start a Design Project</a>
           </div>
         </div>
         <div class="solution-visual">
-          <span class="tag" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);">What gets delivered</span>
-          <div style="margin-top:28px;position:relative;z-index:1;display:flex;flex-direction:column;gap:12px;">
-            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:15px 18px;">
-              <div style="font-size:13px;font-weight:600;color:var(--white);">🗂️ Role-specific skills map</div>
-              <div style="font-size:12.5px;color:rgba(255,255,255,.45);margin-top:3px;">Every role gets a clear list of the exact software tasks they need to perform — and at what level</div>
-            </div>
-            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:15px 18px;">
-              <div style="font-size:13px;font-weight:600;color:var(--white);">📋 Step-by-step SOPs</div>
-              <div style="font-size:12.5px;color:rgba(255,255,255,.45);margin-top:3px;">Written for your tools, your workflows, your terminology — not a generic template</div>
-            </div>
-            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:15px 18px;">
-              <div style="font-size:13px;font-weight:600;color:var(--white);">🎓 Staff training materials</div>
-              <div style="font-size:12.5px;color:rgba(255,255,255,.45);margin-top:3px;">Guides, walkthroughs, and quick-reference sheets built around how your team actually works</div>
-            </div>
-            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:15px 18px;">
-              <div style="font-size:13px;font-weight:600;color:var(--white);">🔄 Ongoing update service</div>
-              <div style="font-size:12.5px;color:rgba(255,255,255,.45);margin-top:3px;">Documents revised whenever your software or processes change — always current, always useful</div>
-            </div>
-          </div>
+          <span class="tag" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);">Design Services</span>
+          <div style="margin-top:24px; border-radius:12px; overflow:hidden; border: 1px solid rgba(255,255,255,0.1);"><img src="assets/images/svc_design.png" alt="design service" style="width:100%; display:block;" /></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── Service 8: Local & Open-Source AI ── -->
+  <!-- ── Custom Instructional Design ── -->
+  <section id="training" class="section section--alt">
+    <div class="container">
+      <div class="solution-inner">
+        <div class="solution-visual">
+          <span class="tag" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);">Training Outcomes</span>
+          <div style="margin-top:24px; border-radius:12px; overflow:hidden; border: 1px solid rgba(255,255,255,0.1);"><img src="assets/images/svc_training.png" alt="training service" style="width:100%; display:block;" /></div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Format Conversions ── -->
+  <section id="conversions" class="section">
+    <div class="container">
+      <div class="solution-inner">
+        <div>
+          <h2 class="h2">Format Conversions</h2>
+          <p class="lead">Data is only useful when it's in the right place. We handle the complex work of converting documents and media across any format.</p>
+          <ul class="solution-list">
+            <li>
+              <span class="check">✓</span>
+              <div>
+                <h3 class="h3">Document & Data Migration</h3>
+                <p>Moving data from old spreadsheets or PDFs into modern, searchable formats.</p>
+              </div>
+            </li>
+          </ul>
+          <div style="margin-top:32px;">
+            <a href="discovery.html" class="btn btn-primary">Process Your Files</a>
+          </div>
+        </div>
+        <div class="solution-visual">
+          <span class="tag" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);">Data Integrity</span>
+          <div style="margin-top:24px; border-radius:12px; overflow:hidden; border: 1px solid rgba(255,255,255,0.1);"><img src="assets/images/svc_conversions.png" alt="conversions service" style="width:100%; display:block;" /></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Video Editing ── -->
+  <section id="video" class="section section--alt">
+    <div class="container">
+      <div class="solution-inner">
+        <div class="solution-visual">
+          <span class="tag" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);">Creative Suite</span>
+          <div style="margin-top:24px; border-radius:12px; overflow:hidden; border: 1px solid rgba(255,255,255,0.1);"><img src="assets/images/svc_video.png" alt="video service" style="width:100%; display:block;" /></div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 3D Printing ── -->
+  <section id="3dprinting" class="section">
+    <div class="container">
+      <div class="solution-inner">
+        <div>
+          <h2 class="h2">3D Printing</h2>
+          <p class="lead">Move from concept to physical object in days. We provide precision 3D printing for functional parts and prototypes.</p>
+          <ul class="solution-list">
+            <li>
+              <span class="check">✓</span>
+              <div>
+                <h3 class="h3">Functional Parts</h3>
+                <p>Precision printing for engineering and product development using industrial-grade materials.</p>
+              </div>
+            </li>
+          </ul>
+          <div style="margin-top:32px;">
+            <a href="discovery.html" class="btn btn-primary">Request a Print Quote</a>
+          </div>
+        </div>
+        <div class="solution-visual">
+          <span class="tag" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);">Rapid Prototyping</span>
+          <div style="margin-top:24px; border-radius:12px; overflow:hidden; border: 1px solid rgba(255,255,255,0.1);"><img src="assets/images/svc_3dprinting.png" alt="3dprinting service" style="width:100%; display:block;" /></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Custom Music Production ── -->
+  <section id="music" class="section section--alt">
+    <div class="container">
+      <div class="solution-inner">
+        <div class="solution-visual">
+          <span class="tag" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);">Audio Studio</span>
+          <div style="margin-top:24px; border-radius:12px; overflow:hidden; border: 1px solid rgba(255,255,255,0.1);"><img src="assets/images/svc_music.png" alt="music service" style="width:100%; display:block;" /></div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── AI Auto-Scheduler ── -->
+  <section id="scheduling" class="section">
+    <div class="container">
+      <div class="solution-inner">
+        <div>
+          <h2 class="h2">AI Auto-Scheduler</h2>
+          <p class="lead">Stop wasting hours on the "when are you free" dance. We deploy an AI-driven scheduling engine that handles your entire booking flow automatically.</p>
+          <ul class="solution-list">
+            <li>
+              <span class="check">✓</span>
+              <div>
+                <h3 class="h3">High ROI</h3>
+                <p>Runs for less than the cost of one week's salary. A full-time scheduling assistant that never sleeps.</p>
+              </div>
+            </li>
+          </ul>
+          <div style="margin-top:32px;">
+            <a href="discovery.html" class="btn btn-primary">Deploy Your Scheduler</a>
+          </div>
+        </div>
+        <div class="solution-visual">
+          <span class="tag" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);">Efficiency</span>
+          <div style="margin-top:24px; border-radius:12px; overflow:hidden; border: 1px solid rgba(255,255,255,0.1);"><img src="assets/images/svc_scheduling.png" alt="scheduling service" style="width:100%; display:block;" /></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Notary Services ── -->
+  <section id="notary" class="section section--alt">
+    <div class="container">
+      <div class="solution-inner">
+        <div class="solution-visual">
+          <span class="tag" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);">Certified</span>
+          <div style="margin-top:24px; border-radius:12px; overflow:hidden; border: 1px solid rgba(255,255,255,0.1);"><img src="assets/images/svc_notary.png" alt="notary service" style="width:100%; display:block;" /></div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Document Processing ── -->
+  <section id="documents" class="section">
+    <div class="container">
+      <div class="solution-inner">
+        <div>
+          <h2 class="h2">Document Processing</h2>
+          <p class="lead">Automate the extraction and handling of data from any document. We turn piles of paperwork into organized, actionable digital data.</p>
+          <ul class="solution-list">
+            <li>
+              <span class="check">✓</span>
+              <div>
+                <h3 class="h3">Intelligent Extraction</h3>
+                <p>Use AI to read and process invoices, contracts, and forms with high accuracy.</p>
+              </div>
+            </li>
+          </ul>
+          <div style="margin-top:32px;">
+            <a href="discovery.html" class="btn btn-primary">Automate My Documents</a>
+          </div>
+        </div>
+        <div class="solution-visual">
+          <span class="tag" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);">Data Pipeline</span>
+          <div style="margin-top:24px; border-radius:12px; overflow:hidden; border: 1px solid rgba(255,255,255,0.1);"><img src="assets/images/svc_documents.png" alt="documents service" style="width:100%; display:block;" /></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Local AI Deployment ── -->
   <section id="local-ai" class="section section--alt">
     <div class="container">
       <div class="solution-inner">
         <div class="solution-visual">
-          <span class="tag" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);">Why run AI locally</span>
-          <div style="margin-top:28px;position:relative;z-index:1;display:flex;flex-direction:column;gap:12px;">
-            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:15px 18px;">
-              <div style="font-size:13px;font-weight:600;color:var(--white);">🔒 Your data never leaves your building</div>
-              <div style="font-size:12.5px;color:rgba(255,255,255,.45);margin-top:3px;">No cloud processing. No third-party access. Full control over where your information goes</div>
-            </div>
-            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:15px 18px;">
-              <div style="font-size:13px;font-weight:600;color:var(--white);">💸 No per-query fees — ever</div>
-              <div style="font-size:12.5px;color:rgba(255,255,255,.45);margin-top:3px;">Cloud AI bills grow with usage. Local AI runs on hardware you own — one cost, no surprises</div>
-            </div>
-            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:15px 18px;">
-              <div style="font-size:13px;font-weight:600;color:var(--white);">🌐 Works without an internet connection</div>
-              <div style="font-size:12.5px;color:rgba(255,255,255,.45);margin-top:3px;">Reliable in any environment — site offices, remote locations, or anywhere connectivity is limited</div>
-            </div>
-            <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:15px 18px;">
-              <div style="font-size:13px;font-weight:600;color:var(--white);">⚖️ Built for regulated industries</div>
-              <div style="font-size:12.5px;color:rgba(255,255,255,.45);margin-top:3px;">Healthcare, legal, finance — sectors where data residency and compliance aren't optional</div>
-            </div>
-          </div>
+          <span class="tag" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);">Private Hardware</span>
+          <div style="margin-top:24px; border-radius:12px; overflow:hidden; border: 1px solid rgba(255,255,255,0.1);"><img src="assets/images/local_ai_servers.png" alt="local-ai service" style="width:100%; display:block;" /></div>
         </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── IT & Cybersecurity ── -->
+  <section id="cybersecurity" class="section">
+    <div class="container">
+      <div class="solution-inner">
         <div>
-          <span class="eyebrow">Service 08</span>
-          <h2 class="h2">Private AI — Installed On Your Own Infrastructure</h2>
-          <p class="lead">Not every business should send its data to a cloud. We install and configure open-source AI models directly on your hardware — giving you the full capability of modern AI with none of the privacy trade-offs.</p>
+          <h2 class="h2">IT & Cybersecurity</h2>
+          <p class="lead">Protect your business's digital backbone. We ensure your infrastructure is modern, fast, and resilient against modern threats.</p>
           <ul class="solution-list">
             <li>
               <span class="check">✓</span>
               <div>
-                <h3 class="h3">Powerful models, fully self-hosted</h3>
-                <p>We deploy leading open-source models — including Llama, Mistral, and others — on your own servers or local machines. Same capability as cloud AI. Zero external dependency.</p>
-              </div>
-            </li>
-            <li>
-              <span class="check">✓</span>
-              <div>
-                <h3 class="h3">No vendor lock-in</h3>
-                <p>You're not tied to any subscription, API provider, or pricing change. The software is yours, the hardware is yours, the model is yours.</p>
-              </div>
-            </li>
-            <li>
-              <span class="check">✓</span>
-              <div>
-                <h3 class="h3">Configured for your specific use case</h3>
-                <p>We don't just install it — we tune it to your operation. Whether it's powering an internal assistant, analysing documents, or generating content, it's set up to do exactly what you need.</p>
-              </div>
-            </li>
-            <li>
-              <span class="check">✓</span>
-              <div>
-                <h3 class="h3">Ongoing support included</h3>
-                <p>We handle updates, model upgrades, and performance tuning as better open-source options become available. You always have the best tool for the job — without having to manage it yourself.</p>
+                <h3 class="h3">Proactive Defense</h3>
+                <p>Not just antivirus — we implement modern security frameworks and zero-trust architectures.</p>
               </div>
             </li>
           </ul>
           <div style="margin-top:32px;">
-            <a href="contact.html" class="btn btn-primary">Explore Private AI for My Business</a>
+            <a href="discovery.html" class="btn btn-primary">Secure My Infrastructure</a>
           </div>
+        </div>
+        <div class="solution-visual">
+          <span class="tag" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);">Infrastructure</span>
+          <div style="margin-top:24px; border-radius:12px; overflow:hidden; border: 1px solid rgba(255,255,255,0.1);"><img src="assets/images/svc_cybersecurity.png" alt="cybersecurity service" style="width:100%; display:block;" /></div>
         </div>
       </div>
     </div>
@@ -569,27 +654,131 @@
       <h2 class="h2">That's exactly what the first call is for.</h2>
       <p>No need to have it figured out before you reach out. We'll help you identify the highest-value place to start — and tell you what it's likely to cost and deliver.</p>
       <div class="cta-actions">
-        <a href="contact.html" class="btn btn-primary btn-white">Book a Free Consultation</a>
-        <a href="testimonials.html" class="btn btn-outline-white">See Client Results</a>
+        <a href="discovery.html" class="btn btn-primary btn-white">Book a Discovery Session</a>
       </div>
     </div>
   </section>
 
   <!-- ── Footer ── -->
-  <footer>
-    <div class="container">
-      <div class="footer-inner">
-        <a href="index.html" class="logo" style="font-size:1rem;">Kemper <span>Design Services</span></a>
-        <nav class="footer-links" aria-label="Footer navigation">
-          <a href="about.html">About</a>
-          <a href="services.html">Services</a>
-          <a href="testimonials.html">Results</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-        <span>© 2026 Kemper Design Services. All rights reserved.</span>
+  <footer class="orbia-footer">
+    <div class="orbia-footer-outer">
+      <div class="container">
+        <div class="orbia-footer-card">
+
+          <!-- Top: 4 columns -->
+          <div class="orbia-footer-cols">
+
+            <!-- Col 1: Brand -->
+            <div class="orbia-footer-brand">
+              <div style="display:flex;align-items:center;gap:20px;margin-bottom:16px;">
+                <a href="index.html" class="orbia-footer-logo">
+                  <img src="assets/logos/logo-white.png" alt="Kemper Design Services" style="height:88px;width:auto;" />
+                </a>
+                <div style="font-family:var(--heading-font);font-weight:700;color:white;font-size:18px;line-height:1.2;">
+                  <div>Kemper</div>
+                  <div>Design</div>
+                  <div>Services</div>
+                </div>
+              </div>
+              <p class="orbia-footer-desc">We modernize business operations with practical AI — automating workflows, building custom tools, and helping teams do more without burning out.</p>
+              <div class="orbia-footer-social">
+                <a href="https://www.linkedin.com/in/damiankemper/" aria-label="LinkedIn" class="orbia-social-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+                <a href="https://www.facebook.com/people/Kemper-Design-Services/61558862320236/" aria-label="Facebook" class="orbia-social-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a6 6 0 0 0-6 6v3H7v4h2v8h4v-8h3l1-4h-4V8a1 1 0 0 1 1-1h3z"/></svg>
+                </a>
+                <a href="https://www.youtube.com/@KemperDesignServices" aria-label="YouTube" class="orbia-social-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Col 2: Quick Links -->
+            <div class="orbia-footer-col">
+              <h4 class="orbia-footer-col-title">Quick Links</h4>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="admin.html">Admin</a></li>
+                <li><a href="#">Terms &amp; Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+              </ul>
+            </div>
+
+            <!-- Col 3: AI Services -->
+            <div class="orbia-footer-col">
+              <h4 class="orbia-footer-col-title">AI Services</h4>
+              <ul>
+                <li><a href="service-automation.html">AI Automations</a></li>
+                <li><a href="consulting.html">AI Consulting</a></li>
+                <li><a href="service-integrations.html">AI Integrations</a></li>
+                <li><a href="service-training.html">AI Enablement</a></li>
+                <li><a href="service-training.html">AI Education</a></li>
+                <li><a href="service-custom-ai.html">AI Implementations</a></li>
+              </ul>
+            </div>
+
+            <!-- Col 4: Additional Services -->
+            <div class="orbia-footer-col">
+              <h4 class="orbia-footer-col-title" style="white-space:nowrap;">Additional Services</h4>
+              <ul>
+                <li><a href="services.html#apps">Custom Applications</a></li>
+                <li><a href="services.html#websites">Web Engineering</a></li>
+                <li><a href="services.html#design">Graphic Design</a></li>
+                <li><a href="services.html#training">Instructional Design</a></li>
+                <li><a href="services.html#notary">Notary Services</a></li>
+              </ul>
+            </div>
+
+            <!-- Col 5: Contact Us -->
+            <div class="orbia-footer-col">
+              <h4 class="orbia-footer-col-title">Contact Us</h4>
+              <ul class="orbia-contact-list">
+                <li>
+                  <span class="orbia-contact-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  </span>
+                  <span>St Augustine, FL</span>
+                </li>
+                <li>
+                  <span class="orbia-contact-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                  </span>
+                  <a href="mailto:damian@kemperdesignservices.com">damian@kemperdesignservices.com</a>
+                </li>
+                <li>
+                  <span class="orbia-contact-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.26h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.81a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16z"/></svg>
+                  </span>
+                  <a href="tel:+19042363706">904.236.3706</a>
+                </li>
+                <li>
+                  <span class="orbia-contact-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  </span>
+                  <span>Mon–Fri, 9am–5pm EST</span>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+          <!-- Bottom bar -->
+          <div class="orbia-footer-bottom">
+            <p class="orbia-footer-copy">© 2026 Kemper Design Services. All rights reserved.</p>
+            <div class="orbia-footer-links">
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
   </footer>
+
+  <script src="scripts.js"></script>
 
 </body>
 </html>
